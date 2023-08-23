@@ -131,11 +131,11 @@ new_env: clean
 protolint_install:
 	GO111MODULE=on GOPATH=~/go go install -v github.com/yoheimuta/protolint/cmd/protolint@v0.27.0
 protolint:
-	PATH=${PATH}:${GOPATH}/bin/:~/go/bin protolint lint -config_path=./protolint.yaml -fix ./aea/mail ./packages/fetchai/protocols ./packages/valory/protocols
+	PATH=${PATH}:${GOPATH}/bin/:~/go/bin protolint lint -config_path=./config/protolint.yaml -fix ./aea/mail ./packages/fetchai/protocols ./packages/valory/protocols
 protolint_install_win:
 	powershell -command '$$env:GO111MODULE="on"; go install -v github.com/yoheimuta/protolint/cmd/protolint@v0.27.0'
 protolint_win:
-	protolint lint -config_path=./protolint.yaml -fix ./aea/mail ./packages/fetchai/protocols ./packages/valory/protocols
+	protolint lint -config_path=./config/protolint.yaml -fix ./aea/mail ./packages/fetchai/protocols ./packages/valory/protocols
 
 # isort: fix import orders
 # black: format files according to the pep standards
