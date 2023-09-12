@@ -250,8 +250,8 @@ jobs:
         run: |
           # export `TAG` variable
           source env.sh
-          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-deploy:$TAG -f deploy-image/Dockerfile . --push
-          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-deploy:latest -f deploy-image/Dockerfile . --push
+          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-deploy:$TAG -f dockerfiles/deploy/Dockerfile . --push
+          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-deploy:latest -f dockerfiles/deploy/Dockerfile . --push
 
   publish-develop-images:
     name: Publish Develop Images
@@ -277,5 +277,5 @@ jobs:
         run: |
           # export `TAG` variable
           source env.sh
-          docker build -t valory/open-aea-develop:$TAG -f develop-image/Dockerfile . --push
-          docker build -t valory/open-aea-develop:latest -f develop-image/Dockerfile . --push
+          docker build -t valory/open-aea-develop:$TAG -f dockerfiles/develop/Dockerfile . --push
+          docker build -t valory/open-aea-develop:latest -f dockerfiles/develop/Dockerfile . --push

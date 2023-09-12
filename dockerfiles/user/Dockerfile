@@ -27,7 +27,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
-COPY user-image/openssl.cnf /etc/ssl
+COPY dockerfiles/user/openssl.cnf /etc/ssl
 
 RUN echo 'PATH="$(python3.10 -m site --user-base)/bin:${PATH}"' >> ~/.bashrc
 RUN echo "alias pip=pip3" >> ~/.bashrc

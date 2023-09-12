@@ -4,7 +4,8 @@ site_description: Everything you need to know about (open) AEAs.
 repo_url: https://github.com/valory-xyz/open-aea
 site_author: developer@fetch.ai,info@valory.xyz
 edit_uri: edit/main/docs/
-
+docs_dir: ../docs
+site_dir: ../site
 theme:
   name: 'material'
   feature:

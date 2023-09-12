@@ -24,7 +24,7 @@ RUN pip install --upgrade setuptools
 RUN aea init --reset --author default_author --remote --ipfs --ipfs-node /dns/registry.autonolas.tech/tcp/443/https
 
 # aea build script
-COPY deploy-image/build.sh /build.sh
+COPY dockerfiles/deploy/build.sh /build.sh
 RUN ["chmod", "+x", "/build.sh"]
 RUN [ "/build.sh" ]
 
@@ -32,6 +32,6 @@ RUN [ "/build.sh" ]
 # EXPOSE 9000
 
 # aea entrypoint script
-COPY deploy-image/entrypoint.sh /entrypoint.sh
+COPY dockerfiles/deploy/entrypoint.sh /entrypoint.sh
 RUN ["chmod", "+x", "/entrypoint.sh"]
 CMD [ "/entrypoint.sh" ]
