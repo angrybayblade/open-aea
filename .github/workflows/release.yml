@@ -196,8 +196,8 @@ jobs:
         run: |
           # export `TAG` variable
           source env.sh
-          docker build -t valory/open-aea-docs:$TAG -f dockerfiles/docs/Dockerfile . --push
-          docker build -t valory/open-aea-docs:latest -f dockerfiles/docs/Dockerfile . --push
+          docker build -t valory/open-aea-docs:$TAG -f docs-image/Dockerfile . --push
+          docker build -t valory/open-aea-docs:latest -f docs-image/Dockerfile . --push
 
   publish-user-images:
     name: Publish User Images
@@ -223,8 +223,8 @@ jobs:
         run: |
           # export `TAG` variable
           source env.sh
-          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-user:$TAG -f dockerfiles/user/Dockerfile . --push
-          docker buildx build --platform linux/amd64,linux/arm64 -t valory/open-aea-user:latest -f dockerfiles/user/Dockerfile . --push
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t valory/open-aea-user:$TAG -f user-image/Dockerfile . --push
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t valory/open-aea-user:latest -f user-image/Dockerfile . --push
 
   publish-deploy-images:
     name: Publish Deploy Images
